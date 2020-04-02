@@ -1,0 +1,2 @@
+# KatalonStudioProject
+Assignments
