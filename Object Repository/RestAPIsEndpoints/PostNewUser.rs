@@ -44,14 +44,19 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
 
+//verify the response code after Post method. 
 
 WS.verifyResponseStatusCode(response, 201)
 
+//Verify the element value after the posting new user.
 
 WS.verifyElementPropertyValue(response, 'name', &quot;morpheus&quot;)
 WS.verifyElementPropertyValue(response, 'job', &quot;leader&quot;)
 
-//ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
+//ResponseObject response1 = WSResponseManager.getInstance().getCurrentResponse()
+
+
+//extracting the value of dynamic ID and saving it in &quot;value&quot; variable.
 
 def slurper = new groovy.json.JsonSlurper()
 def result = slurper.parseText(response.getResponseBodyContent())
